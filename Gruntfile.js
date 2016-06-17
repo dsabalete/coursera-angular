@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc',
-				repoter: require('jshint-stylish')
+				reporter: require('jshint-stylish')
 			},
 			all: {
 				src: [

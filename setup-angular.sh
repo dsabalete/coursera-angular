@@ -1,5 +1,5 @@
 #!/bin/bash
-# setup-angula.sh for an Angular blank app
+# setup-angular.sh for an Angular blank app
 npm install bower
 bower install bootstrap
 # grunt utils
