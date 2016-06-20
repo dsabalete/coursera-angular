@@ -40,6 +40,8 @@ https://www.coursera.org/learn/angular-js
     $ npm install browser-sync --save-dev
     $ npm install del --save-dev
     
+    $ npm install gulp-ng-annotate --save-dev
+    
     
 ### All-in-one script for install all the required stuff
     $ curl https://raw.githubusercontent.com/dsabalete/binutils/master/setup-angular.sh | sh

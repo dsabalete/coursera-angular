@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     changed = require("gulp-changed"),
     rev = require("gulp-rev"),
     browserSync = require("browser-sync"),
+    ngannotate = require("gulp-ng-annotate"),
     del = require("del");
 // gulp-load-plugins can also be used to load all plugins specified in package.json
 
@@ -28,21 +29,17 @@ gulp.task('usemin', ['jshint'], function() {
     return gulp.src('./app/menu.html')
         .pipe(usemin({
             css: [minifycss(), rev()],
-            js: [uglify(), rev()] }))
+            js: [ngannotate(), uglify(), rev()] 
+        }))
         .pipe(gulp.dest('dist/'));
 });
 
 // Images
 gulp.task('imagemin', function() {
     return del(['dist/images']), gulp.src('app/images/**/*')
-        .pipe(cache(imagemin({optimizationLevel: 3, progressive:true, interlaced: true})))
+        .pipe(cache(imagemin({optimizationLevel: 3, progressive:true, interlaced: true })))
         .pipe(gulp.dest('dist/images'))
         .pipe(notify({message: 'Images task complete' }));
-});
-
-// Clean
-gulp.task('clean', function() {
-    return del(['dist']);
 });
 
 gulp.task('copyfonts', ['clean'], function() {
@@ -52,9 +49,10 @@ gulp.task('copyfonts', ['clean'], function() {
         .pipe(gulp.dest('./dist/fonts'));
 });
 
-
-
-
+// Clean
+gulp.task('clean', function() {
+    return del(['dist']);
+});
 
 // Watch
 gulp.task('watch', ['browser-sync'], function() {
@@ -77,7 +75,10 @@ gulp.task('browser-sync', ['default'], function() {
     ]; 
     
     browserSync.init(files, {
-        server: {baseDir: 'dist', index: 'menu.html'},
+        server: {
+            baseDir: 'dist', 
+            index: 'menu.html'
+        },
         port: 8081
     });
     
