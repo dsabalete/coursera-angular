@@ -18,7 +18,11 @@ var gulp = require('gulp'),
     del = require("del");
 // gulp-load-plugins can also be used to load all plugins specified in package.json
 
-    
+// notify with a reporter is needed in order to prevent errors with notify-send
+var customNotify = notify.withReporter(function (options, callback) {
+    callback();
+});
+
 gulp.task('jshint', function() {
     return gulp.src('app/scripts/**/*.js')
         .pipe(jshint())
@@ -26,7 +30,7 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('usemin', ['jshint'], function() {
-    return gulp.src('./app/menu.html')
+    return gulp.src('./app/contactus.html')
         .pipe(usemin({
             css: [minifycss(), rev()],
             js: [ngannotate(), uglify(), rev()] 
@@ -39,7 +43,8 @@ gulp.task('imagemin', function() {
     return del(['dist/images']), gulp.src('app/images/**/*')
         .pipe(cache(imagemin({optimizationLevel: 3, progressive:true, interlaced: true })))
         .pipe(gulp.dest('dist/images'))
-        .pipe(notify({message: 'Images task complete' }));
+        //.pipe(notify({message: 'Images task complete' }));
+        .pipe(customNotify('Images task complete'));
 });
 
 gulp.task('copyfonts', ['clean'], function() {
@@ -77,7 +82,7 @@ gulp.task('browser-sync', ['default'], function() {
     browserSync.init(files, {
         server: {
             baseDir: 'dist', 
-            index: 'menu.html'
+            index: 'contactus.html'
         },
         port: 8081
     });
