@@ -46,3 +46,6 @@ https://www.coursera.org/learn/angular-js
 ### All-in-one script for install all the required stuff
     $ curl https://raw.githubusercontent.com/dsabalete/binutils/master/setup-angular.sh | sh
     
+    
+### To install Angular ngRoute module
+    $ bower install angular-route -S
