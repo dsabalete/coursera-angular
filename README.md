@@ -2,9 +2,11 @@
 This workspce has the code used in a Coursera's MOOC: Introduction to AngularJS lectured by Prof. Jogesh K.Muppala from the Hong Kong University. 
 https://www.coursera.org/learn/angular-js
 
+
 ## Instructions for setting development enviroment
     $ npm install bower
     $ bower install bootstrap
+
 
 ### Package to install for grunt exercise
     $ npm install -g grunt-cli
@@ -22,6 +24,7 @@ https://www.coursera.org/learn/angular-js
     $ npm install grunt-usemin --save-dev
     $ npm install grunt-contrib-watch --save-dev
     $ npm install grunt-contrib-connect --save-dev
+
 
 ### Package to install for gulp exercise
     $ npm install -g gulp
@@ -50,5 +53,8 @@ https://www.coursera.org/learn/angular-js
 ### To install Angular ngRoute module
     $ bower install angular-route -S
     
+    
 ### To install Angular UI Router
     $ bower install angular-ui-router -S
+    
+    

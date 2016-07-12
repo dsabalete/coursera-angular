@@ -54,7 +54,7 @@ angular.module('confusionApp')
             
             console.log($scope.feedback);
             
-            if ($scope.feedback.agree && ($scope.feedback.mychannel === "") && !$scope.feedback.mychannel) {
+            if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
                 $scope.invalidChannelSelection = true;
                 console.log('incorrect');
             } else {
@@ -67,7 +67,7 @@ angular.module('confusionApp')
         };     
     }])
     
-    .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory  ) {
+    .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
         
         var dish = menuFactory.getDish(parseInt($stateParams.id, 10));
 
@@ -77,26 +77,35 @@ angular.module('confusionApp')
     
     .controller('DishCommentController', ['$scope', function($scope) {
             
-        //Step 1: Create a JavaScript object to hold the comment from the form
-        $scope.comment = {rating:5, comment:"", author: "", date:new Date().toISOString() };
+        $scope.comment = {rating:5, comment:"", author: "", date:""};
         
         $scope.submitComment = function () {
         
             console.log('submit Comment');
         
-            //Step 2: This is how you record the date
-            //"The date property of your JavaScript object holding the comment" = new Date().toISOString();
             $scope.comment.date = new Date().toISOString();
             
-            // Step 3: Push your comment into the dish's comment array
             $scope.dish.comments.push($scope.comment);
             
-            //Step 4: reset your form to pristine
-             $scope.commentForm.$setPristine();
+            $scope.commentForm.$setPristine();
             
-            //Step 5: reset your JavaScript object that holds your comment
-            $scope.comment = {rating:5, comment:"", author: "", date:new Date().toISOString() };
+            $scope.comment = {rating:5, comment:"", author: "", date:"" };
         };
         
+    }])
+    
+    // Implement the IndexController and About Controller here
+    .controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
+        
+        $scope.dish = menuFactory.getDish(1);
+        $scope.promotion = menuFactory.getPromotion();
+        $scope.leader = corporateFactory.getLeader(3);
+            
+    }])
+    
+    .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
+    
+        $scope.leaders = corporateFactory.getLeaders();
+      
     }])
 ;
