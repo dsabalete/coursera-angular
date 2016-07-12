@@ -30,7 +30,7 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('usemin', ['jshint'], function() {
-    return gulp.src('./app/dishdetail.html')
+    return gulp.src('./app/**/*.html')
         .pipe(usemin({
             css: [minifycss(), rev()],
             js: [ngannotate(), uglify(), rev()] 
@@ -82,9 +82,9 @@ gulp.task('browser-sync', ['default'], function() {
     browserSync.init(files, {
         server: {
             baseDir: 'dist', 
-            index: 'dishdetail.html'
+            index: 'index.html'
         },
-        port: 8081
+        port: 8080
     });
     
     // Watch any files in dis/, reload on cheange

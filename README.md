@@ -58,3 +58,10 @@ https://www.coursera.org/learn/angular-js
     $ bower install angular-ui-router -S
     
     
+    
+### To install JSON server
+    $ sudo npm install json-server -g
+    
+    
+### To start json-server 
+    $ json-server -p $PORT -H $IP --watch db.json
