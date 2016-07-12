@@ -49,3 +49,6 @@ https://www.coursera.org/learn/angular-js
     
 ### To install Angular ngRoute module
     $ bower install angular-route -S
+    
+### To install Angular UI Router
+    $ bower install angular-ui-router -S
