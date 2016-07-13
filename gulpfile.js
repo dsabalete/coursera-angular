@@ -84,7 +84,7 @@ gulp.task('browser-sync', ['default'], function() {
             baseDir: 'dist', 
             index: 'index.html'
         },
-        port: 8080
+        port: process.env.PORT
     });
     
     // Watch any files in dis/, reload on cheange
