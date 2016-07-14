@@ -64,4 +64,31 @@ https://www.coursera.org/learn/angular-js
     
     
 ### To start json-server 
-    $ json-server -p $PORT -H $IP --watch db.json
+    $ json-server -p 8081 -H $IP --watch ../json-server/db.json
+    
+    
+### To install ngResource module
+    $ bower install angular-resource -S
+    
+
+### To Install Jasmine Testing Framework
+    $ sudo npm install jasmine-core --save-dev
+    
+
+### To install Karma command line interface (for testing)
+    $ sudo npm install karma-cli -g
+    
+    
+### To install the Karma-jasmine plugin
+    $ npm install karma-jasmine --save-dev
+    
+    
+### To install browsers plugins
+    $ npm install phantomjs karma-phantomjs-launcher karma-chrome-launcher --save-dev
+    
+    
+### To install Angular Mocks module
+    $ bower install angular-mocks -S
+    
+    
+### 
