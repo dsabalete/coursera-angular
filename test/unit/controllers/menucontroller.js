@@ -10,7 +10,6 @@ describe('Controller: MenuController', function() {
         $urlRouterProvider.otherwise(function(){return false;});
     }));
     
-    
     // Initialize the controller and a mock scope
     beforeEach(inject(function($controller, _$httpBackend_, $rootScope, menuFactory) {
         
@@ -74,6 +73,7 @@ describe('Controller: MenuController', function() {
         
     });
     
+    
     it('should change the tab selected based on tab clicked', function() {
         
         expect(scope.tab).toEqual(1);
@@ -85,6 +85,4 @@ describe('Controller: MenuController', function() {
         
     });
     
-    
 });
-

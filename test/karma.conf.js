@@ -54,10 +54,10 @@ module.exports = function(config) {
         
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        //browsers: ['Chrome','PhantomJS','PhantomJS_custom'],
+        // browsers: ['Chrome','PhantomJS','PhantomJS_custom'],
         browsers: ['PhantomJS'],
         
-        //// you can define custom flags
+        // // you can define custom flags
         // customLaunchers: {
         //     'PhantomJS_custom': {
         //         base: 'PhantomJS',

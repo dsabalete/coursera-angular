@@ -91,4 +91,14 @@ https://www.coursera.org/learn/angular-js
     $ bower install angular-mocks -S
     
     
-### 
+### To start karma server testing engine
+    $ karma start karma.conf.js
+    
+
+### To install Protractor and selenium
+    $ sudo npm install protractor -g
+    $ sudo webdriver-manager update
+    
+
+### To execute e2e testing with Protractor (this is for local testing, it doesn't work on cloud9)
+    $ protractor protractor.conf.js
