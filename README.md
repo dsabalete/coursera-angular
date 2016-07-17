@@ -1,5 +1,5 @@
 # Code of an AngularJS course
-This workspce has the code used in a Coursera's MOOC: Introduction to AngularJS lectured by Prof. Jogesh K.Muppala from the Hong Kong University. 
+This workspace has the code used in a Coursera's MOOC: Introduction to AngularJS lectured by Prof. Jogesh K.Muppala from the Hong Kong University. 
 https://www.coursera.org/learn/angular-js
 
 
@@ -102,3 +102,11 @@ https://www.coursera.org/learn/angular-js
 
 ### To execute e2e testing with Protractor (this is for local testing, it doesn't work on cloud9)
     $ protractor protractor.conf.js
+    
+    
+### To install yo:
+    $ npm install yo -g
+    
+    
+### To install generators:
+    $ npm install generator-angular -g
